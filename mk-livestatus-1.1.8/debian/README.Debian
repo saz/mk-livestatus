@@ -1,6 +1,21 @@
 mk-livestatus for Debian
 ------------------------
 
-<possible notes regarding this package - if none, delete this file>
+Add the following lines (without quotes) to "/etc/nagios3/nagios.cfg":
+
+"broker_module=/usr/lib/mk-livestatus/livestatus.o /var/lib/nagios3/rw/live"
+"event_broker_options=-1"
+
+Upstream documentation:
+"The only mandatory argument is the complete path to the UNIX socket that
+ Livestatus shall create (/var/lib/nagios/rw/live in our example). Please
+ change that if needed. The best is probably to put it into the same
+ directory as the Nagios pipe. Just as Nagios does with its pipe,
+ Livestatus creates the socket with the permissions 0660. If the directory
+ that the socket is located in has the SGID bit for the group set
+ (chmod g+s), then the socket will be owned by the same group
+ as the directory."
+
+After configuring Nagios, restart it by "/etc/init.d/nagios3 restart"
 
  -- Steffen Zieger <me@saz.sh>  Mon, 07 Feb 2011 10:38:51 +0100
