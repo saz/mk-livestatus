@@ -1,0 +1,5 @@
+mk-livestatus (1.1.8-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Steffen Zieger <me@saz.sh>  Mon, 07 Feb 2011 10:38:51 +0100

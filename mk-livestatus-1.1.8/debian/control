@@ -1,0 +1,18 @@
+Source: mk-livestatus
+Section: net
+Priority: extra
+Maintainer: Steffen Zieger <me@saz.sh>
+Build-Depends: debhelper (>= 7.0.50~), autotools-dev
+Standards-Version: 3.8.4
+Homepage: http://mathias-kettner.de/checkmk_livestatus.html
+
+Package: mk-livestatus
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Nagios Event Broker API Module
+ Livestatus opens a socket by which data can be retrieved on demand.
+ .
+ The socket allows you to send a request for hosts, services or other
+ pieces of data and get an immediate answer. The data is directly read
+ from Nagios' internal data structures. Livestatus does not create its
+ own copy of that data. 
